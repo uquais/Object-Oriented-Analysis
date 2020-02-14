@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
+
 import enums.*;
 
 
@@ -27,7 +29,8 @@ public class Inventory {
 
     }
 
-    public Guitar Search(Guitar searchGuitar) {
+    public List Search(Guitar searchGuitar) {
+        List machingGuitars= new LinkedList();
         for (Iterator i = guitars.iterator(); i.hasNext();){
             Guitar guitar = (Guitar) i.next();
 
@@ -44,9 +47,9 @@ public class Inventory {
                 continue;
             if (searchGuitar.getBackwood()!=guitar.getBackwood())
                 continue;
-            return guitar;
+            machingGuitars.add(guitar);
             }
-            return null;
+            return machingGuitars;
 
         }
     }

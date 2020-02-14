@@ -3,6 +3,7 @@ import enums.eType;
 import enums.eWood;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class FindGuitarTester {
@@ -13,15 +14,19 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
         Guitar WhatEricLikes = new Guitar("", eBuilder.fender, "", eType.acoustic, eWood.alder, eWood.alder, 45540);
-        Guitar guitar = inventory.Search(WhatEricLikes);
-        //System.out.println(guitar);
-
-        if (guitar != null) {
-            System.out.println("Erin, you might like " + guitar.getBuilder() + " " + guitar.getModel() + " " + guitar.getType() + "guitar:\n " + guitar.getBackwood() + "top " + guitar.getPrice() + "!");
-        } else {
-            System.out.println("Sorry, Erin, We have nothing for you.");
+        List<Guitar> matchingguitar = inventory.Search(WhatEricLikes);
+        if (!matchingguitar.isEmpty()){
+            System.out.println("you might likes these guitars");
+            for (Iterator i =matchingguitar.iterator();i.hasNext();){
+                Guitar guitar =(Guitar)i.next();
+                System.out.println("we have a "+guitar.getBuilder()+" "+guitar.getModel()+" "+
+                        guitar.getBackwood()+" "+guitar.getTopwood()+" "+guitar.getPrice()+"-------");
+            }
+            }
+        else
+            System.out.println("Sorry, we have nothing for you");
         }
-    }
+
 
     public static void initializeInventory(Inventory inventory) {
         inventory.addGuitar("123", eBuilder.fender, "2010", eType.acoustic, eWood.alder, eWood.alder, 4550);
