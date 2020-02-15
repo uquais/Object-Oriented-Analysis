@@ -3,50 +3,49 @@ import enums.*;
 public class Guitar {
 
     private String serialNumber, model;
-    private eBuilder builder;
-    private eType type;
-    private eWood backWood,topWood;
     private double price;
+    private GuitarSpec spec;
 
-    public Guitar(String serialNumber, eBuilder builder, String model, eType type, eWood backWood, eWood topWood, double price) {
+    public Guitar(String serialNumber, String model, double price, GuitarSpec spec) {
         this.serialNumber = serialNumber;
-        this.builder = builder;
         this.model = model;
-        this.type = type;
-        this.backWood = backWood;
-        this.topWood = topWood;
         this.price = price;
+        this.spec = spec;
     }
 
-    public void setPrice(float newPrice) {
-        this.price = newPrice;
-    }
-
-    public String getSerialNumber(){
+    public String getSerialNumber() {
         return serialNumber;
     }
 
-    public eBuilder getBuilder() {
-        return builder;
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
 
     public String getModel() {
         return model;
     }
 
-    public eType getType() {
-        return type;
-    }
-
-    public eWood getBackwood() {
-        return backWood;
-    }
-
-    public eWood getTopwood() {
-        return topWood;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public double getPrice() {
         return price;
     }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public GuitarSpec getSpec() {
+        return spec;
+    }
+
+    public void setSpec(GuitarSpec spec) {
+        this.spec = spec;
+    }
 }
+
+
+
+

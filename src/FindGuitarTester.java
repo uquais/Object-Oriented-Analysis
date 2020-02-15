@@ -9,18 +9,18 @@ import java.util.List;
 public class FindGuitarTester {
 
     public static void main(String[] args) {
-
+        //GuitarSpec searchSpec = new GuitarSpec();
 
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
-        Guitar WhatEricLikes = new Guitar("jkug", eBuilder.fender, "", eType.acoustic, eWood.alder, eWood.alder, 45540);
+        GuitarSpec WhatEricLikes = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.alder);
         List<Guitar> matchingguitar = inventory.Search(WhatEricLikes);
         if (!matchingguitar.isEmpty()){
             System.out.println("you might likes these guitars");
             for (Iterator i =matchingguitar.iterator();i.hasNext();){
                 Guitar guitar =(Guitar)i.next();
-                System.out.println("we have a "+guitar.getBuilder()+" "+guitar.getModel()+" "+
-                        guitar.getBackwood()+" "+guitar.getTopwood()+" "+guitar.getPrice()+"-------");
+                System.out.println("we have a "+guitar.getSpec().getBuilder()+" "+guitar.getModel()+" "+
+                        guitar.getSpec().getBackWood()+" "+guitar.getSpec().getTopWood()+" "+guitar.getPrice()+"-------");
             }
             }
         else
@@ -29,9 +29,12 @@ public class FindGuitarTester {
 
 
     public static void initializeInventory(Inventory inventory) {
-        inventory.addGuitar("123", eBuilder.fender, "2010", eType.acoustic, eWood.alder, eWood.alder, 4550);
-        inventory.addGuitar("123", eBuilder.gibson, "2010", eType.electroic, eWood.indian_rosewood, eWood.adirondack, 4550);
-        inventory.addGuitar("334", eBuilder.fender, "2010", eType.acoustic, eWood.alder, eWood.alder, 455770);
+        GuitarSpec spec1 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
+        GuitarSpec spec2 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
+        GuitarSpec spec3 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
+        inventory.addGuitar("1233","2013",2344,spec1);
+        inventory.addGuitar("1233","2013",2344,spec2);
+        inventory.addGuitar("334", "2010", 455770,spec3);
 
     }
 
