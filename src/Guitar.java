@@ -18,11 +18,6 @@ public class Guitar {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return serialNumber;
-    }
-
     public void setPrice(float newPrice) {
         this.price = newPrice;
     }

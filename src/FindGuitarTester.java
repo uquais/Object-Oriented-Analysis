@@ -13,7 +13,7 @@ public class FindGuitarTester {
 
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
-        Guitar WhatEricLikes = new Guitar("", eBuilder.fender, "", eType.acoustic, eWood.alder, eWood.alder, 45540);
+        Guitar WhatEricLikes = new Guitar("jkug", eBuilder.fender, "", eType.acoustic, eWood.alder, eWood.alder, 45540);
         List<Guitar> matchingguitar = inventory.Search(WhatEricLikes);
         if (!matchingguitar.isEmpty()){
             System.out.println("you might likes these guitars");
@@ -31,7 +31,7 @@ public class FindGuitarTester {
     public static void initializeInventory(Inventory inventory) {
         inventory.addGuitar("123", eBuilder.fender, "2010", eType.acoustic, eWood.alder, eWood.alder, 4550);
         inventory.addGuitar("123", eBuilder.gibson, "2010", eType.electroic, eWood.indian_rosewood, eWood.adirondack, 4550);
-        inventory.addGuitar("123", eBuilder.collings, "2010", eType.electroic, eWood.alder, eWood.alder, 4550);
+        inventory.addGuitar("334", eBuilder.fender, "2010", eType.acoustic, eWood.alder, eWood.alder, 455770);
 
     }
 
