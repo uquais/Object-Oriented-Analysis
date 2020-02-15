@@ -29,9 +29,9 @@ public class FindGuitarTester {
 
 
     public static void initializeInventory(Inventory inventory) {
-        GuitarSpec spec1 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
+        GuitarSpec spec1 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.alder);
         GuitarSpec spec2 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
-        GuitarSpec spec3 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.indian_rosewood);
+        GuitarSpec spec3 = new GuitarSpec(eBuilder.fender,eType.acoustic,eWood.alder,eWood.alder);
         inventory.addGuitar("1233","2013",2344,spec1);
         inventory.addGuitar("1233","2013",2344,spec2);
         inventory.addGuitar("334", "2010", 455770,spec3);
