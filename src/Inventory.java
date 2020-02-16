@@ -23,7 +23,6 @@ public class Inventory {
             }
         }
         return null;
-
     }
 
     public List Search(GuitarSpec searchspec) {

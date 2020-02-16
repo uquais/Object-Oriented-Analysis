@@ -6,9 +6,8 @@ public class FindGuitarTester {
 
     public static void main(String[] args) {
         //GuitarSpec searchSpec = new GuitarSpec();
-
         Inventory inventory = new Inventory();
-        FindGuitarTester findGuitarTester = new FindGuitarTester();
+        initializeInventory(inventory);
 
         GuitarSpec whatEricLikes = new GuitarSpec(eBuilder.fender, eType.acoustic, eWood.alder, eWood.alder);
         List<Guitar> matchingGuitar = inventory.Search(whatEricLikes);
@@ -23,7 +22,8 @@ public class FindGuitarTester {
             System.out.println("Sorry, we have nothing for you");
     }
 
-    public void initializeInventory(Inventory inventory) {
+
+    public static void initializeInventory(Inventory inventory) {
         GuitarSpec spec1 = new GuitarSpec(eBuilder.fender, eType.acoustic, eWood.alder, eWood.alder);
         GuitarSpec spec2 = new GuitarSpec(eBuilder.fender, eType.acoustic, eWood.alder, eWood.indian_rosewood);
         GuitarSpec spec3 = new GuitarSpec(eBuilder.fender, eType.acoustic, eWood.alder, eWood.alder);
